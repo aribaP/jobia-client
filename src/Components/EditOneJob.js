@@ -43,7 +43,8 @@ const EditOneJob = () => {
 
 
   const handleCancel = (e) => {
-    navigate('/organization', { replace: true });
+    // navigate('/organization', { replace: true });
+    navigate(-1);
 
   };
 
