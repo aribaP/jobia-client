@@ -41,7 +41,7 @@ const Account = (props) => {
 
 					console.log("Respone",response[0].resFK['resId']);
 					console.log("Data recieved");
-          if(response[0].resFK['resId'])
+          if(response[0]?.resFK['resId'])
             setCheck('CreateResume')
           else
             setCheck('ResumeView')
