@@ -25,7 +25,7 @@ export const axiosApiService = (function () {
     });
 
     const apiCoreServiceInstance = axios.create({
-        baseURL: "http://localhost:5000/",
+        baseURL: "https://jobia-implementation.herokuapp.com/",
         headers: {
             'Content-Type': 'application/json',
         },
