@@ -337,7 +337,7 @@ const Profile2 = () => {
                 id="candCNIC"
                 disabled="true"
                 value={setCand?.candCNIC}
-                placeholder="Phone Number"
+                placeholder="CNIC"
               />
               <button className='btn btn-small btn-outline-secondary'
                 onClick={() => setCNICShow(!cnicHide)}
@@ -352,7 +352,7 @@ const Profile2 = () => {
                 class="form-control input-Fields"
                 id="candCNIC"
                 name="candCNIC"
-                placeholder="Edit your contact number"
+                placeholder="Edit your CNIC"
                 value={formValues.candCNIC}
                 onChange={handleChange}
               />
@@ -371,7 +371,7 @@ const Profile2 = () => {
                 id="candAddress"
                 disabled="true"
                 value={setCand?.candAddress}
-                placeholder="Phone Number"
+                placeholder=" Residential Address "
               />
               <button className='btn btn-small btn-outline-secondary'
                 onClick={() => setResidentialShow(!residentialHide)}
@@ -386,7 +386,7 @@ const Profile2 = () => {
                 class="form-control input-Fields"
                 id="candAddress"
                 name="candAddress"
-                placeholder="Edit your contact number"
+                placeholder="Edit your  Residential Address"
                 value={formValues.candAddress}
                 onChange={handleChange}
               />

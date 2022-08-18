@@ -101,7 +101,7 @@ const ViewOneJob = () => {
 
               </div>
               <form className="d-flex justifyContent width-100" >
-                <Link to= "/organization"><button className="btn body-button-style2 padding-l-15 padding-r-15 mx-3 btn-sm" type="submit" >Back</button></Link>
+                <Link to= "/AllJobs"><button className="btn body-button-style2 padding-l-15 padding-r-15 mx-3 btn-sm" type="submit" >Back</button></Link>
               </form>
             </div>
           

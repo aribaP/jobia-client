@@ -64,7 +64,7 @@ function App() {
           <Route path='/organization' element={<Organization />} />
           <Route exact path='/onejob' element={<ViewOneJob />} />
           <Route exact path='/editonejob' element={<EditOneJob />} />
-
+          <Route exact path='/displayresume' element={<ResumeDisplay />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/about' element={<About />} />
           {/* <Route path='/policy' element={<Policy />}/> */}

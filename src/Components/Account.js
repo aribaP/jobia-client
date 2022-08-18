@@ -22,12 +22,12 @@ import NavBarComponent2 from "./NavBarComponent2";
 
 
 const Account = (props) => {
-  const [check, setCheck] = useState('Profile')
+  const [check, setCheck] = useState('NotificationsCandidate')
   const [show, setShow] = useState(true)
   const [showupload, setShowUpload] = useState(true)
   const [hireEmployee, setHireEmployee] = useState(false)
   const [job, setJob] = useState(true)
-  const [tabs, setTabs] = useState('')
+  const [tabs, setTabs] = useState('NotificationsCandidate')
 
   console.log('-----handleOnSave------', show)
   console.log('-----tabs------', tabs)
@@ -39,9 +39,10 @@ const Account = (props) => {
 			 axiosApiService.coreApi.get(`candidate/showresume/${user.candId}`, {headers : authHeader()})
 				.then((response) => {
 
-					console.log("Respone",response[0].resFK['resId']);
+					// console.log("Respone",response[0].resFK['resId']);
 					console.log("Data recieved");
-          if(response[0]?.resFK['resId'])
+          console.log(response[0].resFK);
+          if(response[0]?.resFK)
             setCheck('CreateResume')
           else
             setCheck('ResumeView')

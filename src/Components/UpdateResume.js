@@ -2,7 +2,7 @@ import * as Yup from 'yup'
 // import TextError from './TextError'
 import React, { useState } from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { axiosApiService } from '../services/axiosAPIs';
@@ -16,6 +16,7 @@ function UpdateResume() {
     const initialValues = {
         candFK: user.candId,
         careerObjective: '',
+        resId: null,
         position: '',
         skills: '',
         gitHub: '',
@@ -59,7 +60,7 @@ function UpdateResume() {
     const onSubmit = (values, submitProps) => {
         console.log('form data', values);
         try {
-            axiosApiService.coreApi.delete(`resume/deletewhole/${location.state.resId}`,values, {headers : authHeader()})
+            axiosApiService.coreApi.delete(`resume/deletewhole/${location.state.resId}`, {headers : authHeader()})
             .then((response) => {
                 console.log("Data recieved");
                 console.log("Oyeee", response);
@@ -145,6 +146,10 @@ function UpdateResume() {
                                                 <div className="input-fields">
                                                     <label className='mb-3' htmlFor='linkedIn'>linkedIn</label>
                                                     <Field type='text' class="form-control mb-3 input-Fields" id='linkedIn' name='linkedIn' validate={validateComments} />
+                                                </div>
+                                                <div className="input-fields">
+                                                    <label className='mb-3' htmlFor='gitHub'>Github</label>
+                                                    <Field type='text' class="form-control mb-3 input-Fields" id='gitHub' name='gitHub' validate={validateComments} />
                                                 </div>
                                             </div>
                                         </div>
@@ -296,13 +301,13 @@ function UpdateResume() {
                                     </div>
                                     <div className='hello'>
                                         <button className="btn btn-secondary mx-2" type='reset'>Reset</button>
-                                        <button
+                                        <Link to ="/account" ><button
                                             className="btn btn-success"
                                             type='submit'
                                             disabled={!formik.isValid || formik.isSubmitting}
                                         >
                                             Submit
-                                        </button>
+                                        </button></Link>
                                     </div>
                                 </Form>
                             </div>

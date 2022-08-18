@@ -13,10 +13,10 @@ import NavBarComponent from "./NavBarComponent";
 import NavBarComponent2 from "./NavBarComponent2";
 
 const Organization = (props) => {
-  const [check, setCheck] = useState('Profile2');
+  const [check, setCheck] = useState('AllJobs');
   const [show, setShow] = useState(true);
   const [Job, setJob] = useState(true);
-  const [tabs, setTabs] = useState("");
+  const [tabs, setTabs] = useState("AllJobs");
 
   console.log("-----handleOnSave------", show);
   console.log("-----tabs------", tabs);

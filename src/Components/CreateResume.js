@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { axiosApiService } from '../services/axiosAPIs';
 import authHeader from '../services/auth-header';
 
@@ -19,6 +19,20 @@ const CreateResume = ({ onChangeStatus, onChangeTabs }) => {
           console.log(formValues);
         })
 
+    } catch (err) {
+      console.log(err);
+    }
+
+  };
+  const navigate = useNavigate();
+  const DeleteResume = async (resId) => {
+    try {
+      axiosApiService.coreApi.delete(`resume/deletewhole/${resId}`, { headers: authHeader() })
+        .then((response) => {
+          console.log("Data recieved");
+          console.log("Oyeee", response);
+          navigate("/account");
+        })
     } catch (err) {
       console.log(err);
     }
@@ -49,8 +63,7 @@ const CreateResume = ({ onChangeStatus, onChangeTabs }) => {
 
         <button style={{ marginLeft: 5, width: 72 }}className="btn create"
           type="submit" onClick={() => {
-          onChangeStatus('ResumePage')
-          onChangeTabs('DeleteResume')
+            DeleteResume(formValues)
         }}>Delete</button>
       </div>
     </div>
