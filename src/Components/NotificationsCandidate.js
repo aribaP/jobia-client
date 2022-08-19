@@ -41,11 +41,10 @@ const NotificationsCandidate = ({ onChangeStatus, onChangeTabs, setCheck }) => {
         const user = JSON.parse(localStorage.getItem('userToken') ?? '{}');
         axiosApiService.coreApi.get(`candidate/notification/${user.candId}`, {headers : authHeader()})
             .then(response => {
-                if(!response[0]?.jdId)
+                if(response[0]?.jdId)
                     setFormValues(response);
                 console.log("Data recieved");
                 console.log(response);
-                console.log(formValues);
 
             }).catch(err => {
                 console.log(err);
@@ -77,17 +76,17 @@ const NotificationsCandidate = ({ onChangeStatus, onChangeTabs, setCheck }) => {
 
                             <div key={details?.orgName}>
                                 <h4 style={{
-                                    color: "#21aa8f",
+                                    color: "#000",
                                 }}> <b><u>  Company Name:</u></b>  {details?.orgName}</h4>
                             </div>
                             <div key={details?.jdPosition}>
                                 <h5 style={{
-                                    color: "#21aa8f",
+                                    color: "#000",
                                 }}> <b><u>  Job Position:</u></b>  {details?.jdPosition}</h5>
                             </div>
                             <div key={details?.jdRequiredSkills}>
                                 <h5 style={{
-                                    color: "#21aa8f",
+                                    color: "#000",
                                 }}> <b><u>   Requirements:</u></b>
                                     <p style={{
                                         color: "#333",
@@ -98,17 +97,17 @@ const NotificationsCandidate = ({ onChangeStatus, onChangeTabs, setCheck }) => {
                             </div>
                             <div key={details?.jdMinimumExperience}>
                                 <h5 style={{
-                                    color: "#21aa8f",
+                                    color: "#000",
                                 }}> <b><u>   Minimum Experience:</u></b>   {details?.jdMinimumExperience}</h5>
                             </div>
                             <div key={details?.jdLocation}>
                                 <h5 style={{
-                                    color: "#21aa8f",
+                                    color: "#000",
                                 }}> <b><u>   Location:</u></b>   {details?.jdLocation} </h5>
                             </div>
                             <div key={details?.city}>
                                 <h5 style={{
-                                    color: "#21aa8f",
+                                    color: "#000",
                                 }}> <b><u>   City:</u></b>   {details?.jdCity} </h5>
                             </div>
                             <div className='btn1'>
